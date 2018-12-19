@@ -94,6 +94,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Section = \(indexPath.section), Row = \(indexPath.row)")
+        let loginViewController = LoginViewController()
+        self.present(loginViewController, animated: true, completion: nil)
     }
 }
 

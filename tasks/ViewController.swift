@@ -93,9 +93,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // This is a delegate method and will be called when user taps on a cell in uitableView, but if you have not set tablview's delegate to self, this method will not be called.
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Section = \(indexPath.section), Row = \(indexPath.row)")
-        let loginViewController = LoginViewController()
-        self.present(loginViewController, animated: true, completion: nil)
+        //print("Section = \(indexPath.section), Row = \(indexPath.row)")
+        
+        let loginViewController2 = TestViewController()
+        self.present(loginViewController2, animated: true, completion: nil)
+       // let loginViewController2 = LoginViewController2()
+        //self.present(loginViewController2, animated: true, completion: nil)
     }
 }
+
 

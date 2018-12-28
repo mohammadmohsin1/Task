@@ -18,6 +18,8 @@
 		01C60D1B21BAE9C6008881F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C60D1921BAE9C6008881F2 /* Main.storyboard */; };
 		01C60D1D21BAE9C8008881F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C60D1C21BAE9C8008881F2 /* Assets.xcassets */; };
 		01C60D2021BAE9C8008881F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C60D1E21BAE9C8008881F2 /* LaunchScreen.storyboard */; };
+		01EBB09421D548D70045538F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EBB09221D548D70045538F /* TableViewController.swift */; };
+		01EBB09521D548D70045538F /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EBB09321D548D70045538F /* TableViewController.xib */; };
 		E14B7F9921D540620066345C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B7F9721D540620066345C /* TestViewController.swift */; };
 		E14B7F9A21D540620066345C /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14B7F9821D540620066345C /* TestViewController.xib */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		01C60D1C21BAE9C8008881F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C60D1F21BAE9C8008881F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01C60D2121BAE9C8008881F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01EBB09221D548D70045538F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		01EBB09321D548D70045538F /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		E14B7F9721D540620066345C /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		E14B7F9821D540620066345C /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,8 @@
 				01C60D1921BAE9C6008881F2 /* Main.storyboard */,
 				0160912921BEE022009A7DD6 /* SecondViewController.swift */,
 				0160912A21BEE022009A7DD6 /* SecondViewController.xib */,
+				01EBB09221D548D70045538F /* TableViewController.swift */,
+				01EBB09321D548D70045538F /* TableViewController.xib */,
 				0118940E21C96A91000BF645 /* Login */,
 				0160912F21BEE9FD009A7DD6 /* ModelViewController.swift */,
 				0160912D21BEE870009A7DD6 /* Person.swift */,
@@ -160,6 +166,7 @@
 				01C60D1D21BAE9C8008881F2 /* Assets.xcassets in Resources */,
 				E14B7F9A21D540620066345C /* TestViewController.xib in Resources */,
 				01C60D1B21BAE9C6008881F2 /* Main.storyboard in Resources */,
+				01EBB09521D548D70045538F /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +180,7 @@
 				0118940C21C96A7D000BF645 /* LoginViewController.swift in Sources */,
 				0160912B21BEE022009A7DD6 /* SecondViewController.swift in Sources */,
 				E14B7F9921D540620066345C /* TestViewController.swift in Sources */,
+				01EBB09421D548D70045538F /* TableViewController.swift in Sources */,
 				01C60D1821BAE9C6008881F2 /* ViewController.swift in Sources */,
 				0160912E21BEE870009A7DD6 /* Person.swift in Sources */,
 				0160913021BEE9FD009A7DD6 /* ModelViewController.swift in Sources */,

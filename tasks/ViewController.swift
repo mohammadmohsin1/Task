@@ -15,21 +15,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     
     var sections = ["A", "B", "C", "D"]
-    var sectionA = ["Ali", "Ammad", "Azim"]
-    var sectionB = ["Burhan", "Bilal"]
-    var sectionC = ["Chattha"]
-    var sectionD = ["Daniyal", "Dawood", "Danny", "dfghj"]
+    var names = [["Ali", "Ammad", "Azim"], ["Burhan", "Bilal"], ["Chattha"], ["Daniyal", "Dawood", "Danny", "Dann"]]
     
     // MARK: - UIViewController Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if sections.count != names.count {
+            print("Invalid Data")
+            return
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if sections.count != names.count {
+            let alertController = UIAlertController(title: "Error", message: "You provided Invalid data", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Got it..!!", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
     }
     
     // MARK: - UITableView DataSource
@@ -39,52 +54,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if section == 0 {
-            return sectionA.count
-            
-        } else if section == 1 {
-            return sectionB.count
-        
-        } else if section == 2 {
-            return sectionC.count
-            
-        } else {
-            return sectionD.count
-        }
+        return names[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        //cell.textLabel?.text = "\(indexPath.row)" // String Interpolation
-        
-        if indexPath.section == 0 {
-            cell.textLabel?.text = sectionA[indexPath.row]
-            
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = sectionB[indexPath.row]
-            
-        } else if indexPath.section == 2 {
-            cell.textLabel?.text = sectionC[indexPath.row]
-            
-        } else if indexPath.section == 3 {
-            cell.textLabel?.text = sectionD[indexPath.row]
-        }
-        
+//        let x = names[indexPath.section]
+//        cell.textLabel?.text = x[indexPath.row]
+        cell.textLabel?.text = names[indexPath.section][indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        //        if section == 0 {
-        //            return "Section 0"
-        //
-        //        } else if section == 1 {
-        //            return "Section 1"
-        //
-        //        } else {
-        //            return "Section 2"
-        //        }
         return sections[section]
     }
     
@@ -94,12 +75,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print("Section = \(indexPath.section), Row = \(indexPath.row)")
-        
         let loginViewController2 = TestViewController()
         self.present(loginViewController2, animated: true, completion: nil)
-       // let loginViewController2 = LoginViewController2()
-        //self.present(loginViewController2, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            names[indexPath.section].remove(at: indexPath.row)
+            tableView.reloadData()
+            // delete object from dataSource and reload data
+        }
     }
 }
-
 
